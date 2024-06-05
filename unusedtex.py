@@ -119,11 +119,10 @@ def remove_unused_textures(in_fname, out_fname):
             map_arr[offset:offset+size].tobytes()
             == b.textures_by_name[tex_name].data[mip_index]
         )
-        #map_arr[offset:offset+size] *= marked.ravel()
         map_arr[offset:offset+size] = np.where(
             marked.ravel(),
             map_arr[offset:offset+size],
-            251
+            251    # Change to zero to make any bleeding less obvious.
         )
 
     with open(out_fname, 'wb') as f:

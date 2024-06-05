@@ -1,0 +1,2 @@
+tqdm==4.64.1
+git+https://github.com/matthewearl/pyquake.git@2f1b0350dfab24b6557a37579cf15c78745e30e1#egg=pyquake
